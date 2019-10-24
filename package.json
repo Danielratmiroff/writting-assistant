@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "psrxjs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "three": "0.109.0"
-  }
-=======
   "name": "petproject",
   "version": "0.1.0",
   "private": true,
@@ -57,5 +43,4 @@
     "> 1%",
     "last 2 versions"
   ]
->>>>>>> e87689d583ee72eb4353cadb32563ee1b27bc8a7
 }
