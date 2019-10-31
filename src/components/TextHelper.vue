@@ -14,12 +14,15 @@
  -->
 
   <div class="container">
-    <textarea
-        v-model="text.content" 
-        id="textBox" 
-        class="textBox" 
-        placeholder="Type here" />
-
+    <div class="textWrap">
+      <textarea
+          v-model="text.content" 
+          class="textBox" 
+          placeholder="Type here" />
+      <div class="options-secondary">
+        <copyclipboard class="copyclipboard" /> 
+      </div>
+    </div>
     <div class="menubar"> 
       <div class="settings">
         <div v-on:click="WordsActive" 
@@ -33,19 +36,25 @@
           Chars
         </div>
       </div>
+      <div class="counter-displays">
+        <p class="counters" v-if="isWordsActive">Wrds: {{ text.words }}</p>
+        <p class="counters" v-if="isLengthActive">Chrs: {{ text.len }}</p>
+      </div>
     </div>
 
-    <p class="counters" v-if="isWordsActive">Words: {{ text.words }}</p>
-    <p class="counters" v-if="isLengthActive">Characters: {{ text.len }}</p>
-       
   </div>
 </template>
 
 <script>
+import copyclipboard from './copyclipboard.vue'
+
 export default {
   name: 'TextHelper',
   props: {
     msg: String
+  },
+  components: {
+    copyclipboard
   },
   data() {
     return {
@@ -79,56 +88,68 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-* {
-  font-family: 'Courier New', Courier, monospace
+
+.textWrap {
+  background-color: white;
+  height: 400px;
+  font-size: 14px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.container {
-   width: 70%;
-   position: relative;
+
+.textBox {
+  background-color: white;
+  border: none;
+  resize: none;
+  width: 100%;
+  flex-grow: 1;
 }
+
+.options-secondary {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .menubar {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 0.5rem
 }
+
 .settings {
   display: flex
 }
-.options {
-  display: flex
-}
-.options-icon {
-  width: 100%;
-  max-width: 28px;
-}
-.textBox {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  border: 2px solid #cdcdcd;
-  border-color: rgba(0, 0, 0, .14);
-  background-color: white;
-  font-size: 14px;
-  padding: 0.5rem;
-}
-.check, button {
+
+.check {
     cursor: pointer;
     padding: 0.3rem 0.4rem;
-    border: 1px solid #eeeeee;
-    border-radius: 3px;
-    border-bottom: none;
+    border: 1px solid #dddddd;
     display: flex;
     align-items: center;
+    margin: 0 0.2rem;
 }
+
 .on {
     background-color: #4880f0;
     color:white
 }
+
+
 .counters{
   text-align: right;
-  margin: 0.2rem 0.2rem 0 0;
+  margin-left: 0.2rem;
   width: 100%;
   color: grey;
   font-size: 14px;
+}
+
+.counter-displays {
+  display: flex;
+  align-items: center;
+  
 }
 </style>

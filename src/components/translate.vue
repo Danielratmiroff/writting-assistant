@@ -31,7 +31,7 @@
             <option>pr</option>
           </select>   
         </div>
-      <div class="textBox translate">
+      <div class="textBox results">
         <p
           v-for="(item, index) in translationsText"
           :key="item"
@@ -49,12 +49,16 @@
 </template>
 
 <script>
+import copyclipboard from './copyclipboard.vue'
 
 export default {
   name: 'translate',
     props: {
     msg: String,
     isTabActive: Boolean
+  },
+  components: {
+    copyclipboard
   },
   data() {
     return {  
@@ -70,12 +74,9 @@ export default {
                 const response = await fetch('https://api.mymemory.translated.net/get?q=' + this.translateText + '!&langpair=' + this.fromLanguage + '|' + this.toLanguage);
                 const myJson = await response.json();
                 this.translationsText = [];
-                console.log(myJson);
                 for (let key in myJson.matches) {
                   this.translationsText.push(myJson.matches[key].translation);  
                 }
-                console.log(this.translationsText)
-                
             } catch (error) {
                 console.error(error);
             }
@@ -86,13 +87,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .container {
   width: 70%;
-}
-
-p {
-  margin: 0 0.5rem 0 0;
 }
 
 .textboxes-wrap {
@@ -101,12 +98,16 @@ p {
   flex: 100%;
 }
 
+.textboxes-wrap > div {
+  width: 50%
+}
+
 .inputLanguage {
   display: flex;
   justify-content: flex-start;
 }
 
-.translate {
+.results {
   background-color: rgb(243, 243, 243)
 }
 </style>

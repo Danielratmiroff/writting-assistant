@@ -10,9 +10,6 @@
 
 export default {
   name: 'copyclipboard',
-    props: {
-    msg: String
-  },
   methods: { 
     copy() {
         if (!this.msg) {

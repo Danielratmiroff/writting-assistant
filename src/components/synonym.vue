@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <p>Find Synonyms (English)</p>
     <div class="textboxes-wrap">
       <div>
           <textarea
@@ -9,7 +10,7 @@
           />
       </div>
     
-        <div class="textBox synonyms">
+        <div class="textBox results">
         <p
           v-for="(item, index) in synonymText"
           :key="item"
@@ -28,10 +29,15 @@
 
 <script>
 
+import copyclipboard from './copyclipboard.vue'
+
 export default {
   name: 'synonym',
     props: {
     msg: String
+  },
+  components: {
+    copyclipboard
   },
   data() {
     return {   
@@ -56,27 +62,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-.container {
-  width: 70%;
-}
-
 p {
-  margin: 0 0.5rem 0 0;
-}
-
-.textboxes-wrap {
-  display: flex;
-  width: 100%;
-  flex: 100%;
-}
-
-.inputLanguage {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.synonyms {
-  background-color: rgb(243, 243, 243)
+  text-align: left
 }
 </style>
