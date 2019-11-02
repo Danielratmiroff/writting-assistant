@@ -1,15 +1,20 @@
 <template>
     <div class="container">
-      <p>Find Synonyms (English)</p>
+      <p class="subheading">
+        Find Synonyms
+        <span style="color:cornflowerblue;"> 
+          (English only)
+          </span>
+          </p>
     <div class="textboxes-wrap">
-      <div>
+        <div class="textWrap">
           <textarea
           class="textBox" 
           placeholder="Type here" 
           v-model="getText"
           />
       </div>
-    
+    <div class="textWrap">
         <div class="textBox results">
         <p
           v-for="(item, index) in synonymText"
@@ -20,8 +25,12 @@
         </p>
       </div>
     </div>
-    <button v-on:click="getSynonym">
-      <p>Get Synonym</p>
+    </div>
+    <button 
+      class="triggerActionButton" 
+      v-on:click="getSynonym"
+      >
+      Fetch Synonym
     </button>
 
   </div>
@@ -62,7 +71,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-p {
-  text-align: left
+.subheading {
+  text-align: left;
+  margin-bottom: 0.4rem;
 }
 </style>
