@@ -1,4 +1,13 @@
-# petproject
+# Writing Assistant
+
+This project is meant to assist your writing whenever you are answering an email or an University test question.
+
+
+## Features: 
+- Word Counter
+- Characters Counter
+- Language translator
+- Synonymous Finder
 
 ## Project setup
 ```
@@ -9,24 +18,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-# portfolio
-06-19_Vue_Front-End-Portfolio
