@@ -1,7 +1,7 @@
 # Writing Assistant
-```
+
 This project is meant to assist your writing whenever you are answering an email or an University test question.
-```
+
 
 ## Features: 
 - Word Counter
