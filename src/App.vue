@@ -210,7 +210,7 @@ footer {
   background-color: rgb(0, 0, 0);
   line-height: 1.5;
   font-size: 0.8rem;
-  margin-top: 100vp;
+  margin-top: 4rem;
   color: white
 }
 
