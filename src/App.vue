@@ -8,7 +8,7 @@
    Create Footer -- DONE
    Fix copyclipboard component -- DONE
    Design Options Tabs layout  -- DONE
-   Fix footer to bottom
+   Fix footer to bottom  -- DONE
    Make Responsive
    Make keyboard accessible
    Convert checkbox into component  

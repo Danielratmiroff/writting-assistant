@@ -101,7 +101,7 @@ export default {
   margin-top: 0.5rem
 }
 
-.settings {
+.settings {https://github.com/Danielratmiroff/writingassistant.github.io.git
   display: flex
 }
 
