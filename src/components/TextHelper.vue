@@ -45,7 +45,7 @@ import copyclipboard from './copyclipboard.vue'
 export default {
   name: 'TextHelper',
   props: {
-    msg: String
+    storage: Object
   },
   components: {
     copyclipboard
@@ -53,9 +53,9 @@ export default {
   data() {
     return {
       text: {
-        content : '',
-        len : 0,
-        words: 0,
+        content : this.storage.text,
+        len : this.storage.length,
+        words: this.storage.word,
       },
       isLengthActive : false,
       isWordsActive : true
@@ -63,6 +63,7 @@ export default {
   },
   watch: {
     'text.content' : function (content) {
+      this.$emit('change-content', this.text);
       this.text.len = content.length;
       this.text.words = content.split(' ') ? 
                         content.length === 0 ? 0 :

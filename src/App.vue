@@ -1,14 +1,4 @@
  <!-- 
-   separate different components -- DONE
-   Create translate display -- DONE 
-   Create synonym display  -- DONE
-   Design TextHelper layout -- DONE
-   Design Translate layout -- DONE
-   Design Synonym layout -- DONE
-   Create Footer -- DONE
-   Fix copyclipboard component -- DONE
-   Design Options Tabs layout  -- DONE
-   Fix footer to bottom  -- DONE
    Make Responsive
    Make keyboard accessible
    Convert checkbox into component  
@@ -49,7 +39,10 @@
       </div>       
     </div>
 
-    <TextHelper v-if="isActive ==='textHelper'"/> 
+    <TextHelper v-if="isActive ==='textHelper'" 
+            v-on:change-content="saveContent"
+            :storage='save'
+            /> 
     <translate v-else-if="isActive ==='translate'"/>
     <synonym v-else />
     
@@ -71,7 +64,7 @@ import TextHelper from './components/TextHelper.vue'
 import translate from './components/translate.vue'
 import synonym from './components/synonym.vue'
 import checkbox from './components/checkbox.vue'
-
+// msg=this.saveText;
 export default {
   name: 'app',
   components: {
@@ -82,12 +75,22 @@ export default {
   },
   data() {
      return {
-       isActive : "textHelper"
+       isActive : "textHelper",
+       save: { 
+         text : '',
+         length : 0,
+         word : 0
+       }
      }
   },
   methods: {
     activeTab(tab) {
       this.isActive = tab;
+    },
+    saveContent(value) {
+        this.save.text = value.content;
+        this.save.length = value.len;
+        this.save.word = value.words;
     }
   }
 }

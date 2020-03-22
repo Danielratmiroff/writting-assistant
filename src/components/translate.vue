@@ -34,7 +34,6 @@
         <div class="textWrap">
           <div class="textBox results">
             <p v-for="(item, index) in translationsText" :key="item">
-              {{index}}
               {{item}}
             </p>
           </div>
