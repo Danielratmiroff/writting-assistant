@@ -9,12 +9,8 @@ This project is meant to assist your writing whenever you are answering an email
 - Language translator
 - Synonymous Finder
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Link
+
+[Project Management Application](https://danielratmiroff.github.io/project-management/) 
+![alt text](https://q-static.ninox.com/images/redesign-2020/icon-link.svg "Project Manager")
