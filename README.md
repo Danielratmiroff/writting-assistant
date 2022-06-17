@@ -17,4 +17,4 @@ The app should include the following functionality:
 
 ### UI Design:
 
-![Screenshot](https://raw.githubusercontent.com/Danielratmiroff/myblog/master/images/writer/easywrite.jpg)\
+![Screenshot](https://raw.githubusercontent.com/Danielratmiroff/myblog/master/images/writer/easywrite.jpg)
