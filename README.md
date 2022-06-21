@@ -1,4 +1,4 @@
-# Writing Assistant
+## Writing Assistant
 
 I made this small project to have a place where I could access all the basic functionality needed to write my university papers comfortably ✍️.
 
