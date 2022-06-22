@@ -1,4 +1,4 @@
- <!-- 
+<!-- 
    Make Responsive
    Make keyboard accessible
    Convert checkbox into component  
@@ -14,98 +14,107 @@
     <h2>
       Make your writing simpler
     </h2>
-     <div class="options">
+    <div class="options">
       <div class="tabs">
-        <button 
+        <button
           v-on:click="activeTab('textHelper')"
-          v-bind:class="this.isActive === 'textHelper' ? 'activeTabButton' : null"
-          >
+          v-bind:class="
+            this.isActive === 'textHelper' ? 'activeTabButton' : null
+          "
+        >
           <img alt="textHelper" src="./assets/write.png" class="options-icon" />
         </button>
 
         <button
-         v-on:click="activeTab('translate')"
-         v-bind:class="this.isActive === 'translate' ? 'activeTabButton' : null"
-         >
-          <img alt="Translate" src="./assets/translate.jpg" class="options-icon" />
+          v-on:click="activeTab('translate')"
+          v-bind:class="
+            this.isActive === 'translate' ? 'activeTabButton' : null
+          "
+        >
+          <img
+            alt="Translate"
+            src="./assets/translate.jpg"
+            class="options-icon"
+          />
         </button>
 
-        <button 
+        <button
           v-on:click="activeTab('synonym')"
           v-bind:class="this.isActive === 'synonym' ? 'activeTabButton' : null"
-          >
+        >
           <img alt="Synonym" src="./assets/synonym.png" class="options-icon" />
         </button>
-      </div>       
+      </div>
     </div>
 
-    <TextHelper v-if="isActive ==='textHelper'" 
-            v-on:change-content="saveContent"
-            :storage='save'
-            /> 
-    <translate v-else-if="isActive ==='translate'"/>
+    <TextHelper
+      v-if="isActive === 'textHelper'"
+      v-on:change-content="saveContent"
+      :storage="save"
+    />
+    <translate v-else-if="isActive === 'translate'" />
     <synonym v-else />
-    
+
     <footer class="footer">
-             <img class="footer-logo" src="./assets/logo.png" />
-          <p>
-          DR © 2019
-          </p>
-          <a class="github-link"
-            href="https://github.com/Danielratmiroff/writingassistant.github.io.git">
-            Find this project in Github
-          </a>
+      <img class="footer-logo" src="./assets/logo.png" />
+      <p>
+        DR © 2019
+      </p>
+      <a
+        class="github-link"
+        href="https://github.com/Danielratmiroff/writingassistant.github.io.git"
+      >
+        Find this project in Github
+      </a>
     </footer>
   </div>
 </template>
 
 <script>
-import TextHelper from './components/TextHelper.vue'
-import translate from './components/translate.vue'
-import synonym from './components/synonym.vue'
-import checkbox from './components/checkbox.vue'
+import TextHelper from "./components/TextHelper.vue";
+import translate from "./components/translate.vue";
+import synonym from "./components/synonym.vue";
 // msg=this.saveText;
 export default {
-  name: 'app',
+  name: "app",
   components: {
     TextHelper,
     translate,
     synonym,
-    checkbox
   },
   data() {
-     return {
-       isActive : "textHelper",
-       save: { 
-         text : '',
-         length : 0,
-         word : 0
-       }
-     }
+    return {
+      isActive: "textHelper",
+      save: {
+        text: "",
+        length: 0,
+        word: 0,
+      },
+    };
   },
   methods: {
     activeTab(tab) {
       this.isActive = tab;
     },
     saveContent(value) {
-        this.save.text = value.content;
-        this.save.length = value.len;
-        this.save.word = value.words;
-    }
-  }
-}
-
+      this.save.text = value.content;
+      this.save.length = value.len;
+      this.save.word = value.words;
+    },
+  },
+};
 </script>
 
 <style>
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
-  background-color: aliceblue
+  background-color: aliceblue;
 }
 
 * {
-  font-family: 'Montserrat', sans-serif
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
@@ -116,7 +125,7 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 #app {
@@ -124,7 +133,7 @@ button:focus {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  display: flex; 
+  display: flex;
   height: 100%;
   align-items: center;
   flex-direction: column;
@@ -133,9 +142,8 @@ button:focus {
   flex: 1 1 auto;
 }
 
-
-
-.options, .tabs {
+.options,
+.tabs {
   display: flex;
 }
 
@@ -153,17 +161,18 @@ button:focus {
 }
 
 .container {
-   width: 70%;
-   position: relative;
+  width: 70%;
+  position: relative;
 }
 
-.check, button {
-    cursor: pointer;
-    border-radius: 3px;
+.check,
+button {
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 check {
-  padding: 0.3rem .5rem;
+  padding: 0.3rem 0.5rem;
 }
 
 button {
@@ -192,7 +201,7 @@ button {
   border: none;
   resize: none;
   flex-grow: 1;
-  text-align: left
+  text-align: left;
 }
 
 .triggerActionButton {
@@ -207,14 +216,14 @@ button {
   font-size: 16px;
 }
 
-footer { 
+footer {
   width: 100%;
   padding: 1.5rem 0;
   background-color: rgb(0, 0, 0);
   line-height: 1.5;
   font-size: 0.8rem;
   margin-top: 4rem;
-  color: white
+  color: white;
 }
 
 .footer-logo {
@@ -223,6 +232,6 @@ footer {
 }
 
 .github-link {
-  color: white
+  color: white;
 }
 </style>
