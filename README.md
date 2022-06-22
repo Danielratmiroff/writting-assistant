@@ -2,7 +2,7 @@
 
 I made this small project to have a place where I could access all the basic functionality needed to write my university papers comfortably ✍️.
 
-[Easy Write App]([https://danielratmiroff.github.io/writingassistant.github.io//](https://danielratmiroff.github.io/writting-assistant/)) ![Visit App](https://raw.githubusercontent.com/Danielratmiroff/myblog/master/images/linkicon.svg)
+[Easy Write App](https://danielratmiroff.github.io/writting-assistant/) ![Visit App](https://raw.githubusercontent.com/Danielratmiroff/myblog/master/images/linkicon.svg)
 
 [Github](https://github.com/Danielratmiroff/writting-assistant) ![Github](https://raw.githubusercontent.com/Danielratmiroff/myblog/master/images/linkicon.svg)
 
