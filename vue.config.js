@@ -1,5 +1,4 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-      ? '/writingassistant.github.io/'
-      : '/'
-  }
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/writting-assistant/" : "/",
+};

@@ -33,35 +33,32 @@
         </div>
         <div class="textWrap">
           <div class="textBox results">
-            <p v-for="(item, index) in translationsText" :key="item">
-              {{item}}
+            <p v-for="item in translationsText" :key="item">
+              {{ item }}
             </p>
           </div>
         </div>
       </div>
     </div>
-    <button class="triggerActionButton" v-on:click="translate">Translate</button>
+    <button class="triggerActionButton" v-on:click="translate">
+      Translate
+    </button>
   </div>
 </template>
 
 <script>
-import copyclipboard from "./copyclipboard.vue";
-
 export default {
   name: "translate",
   props: {
     msg: String,
-    isTabActive: Boolean
-  },
-  components: {
-    copyclipboard
+    isTabActive: Boolean,
   },
   data() {
     return {
       translateText: "",
       translationsText: [],
       fromLanguage: "en",
-      toLanguage: "es"
+      toLanguage: "es",
     };
   },
   methods: {
@@ -81,15 +78,15 @@ export default {
           this.translationsText.push(myJson.matches[key].translation);
         }
       } catch (error) {
-        console.error(error);
+        throw Error(error);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
+<style>
 .container {
   width: 70%;
 }
